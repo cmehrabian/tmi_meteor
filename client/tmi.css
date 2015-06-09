@@ -1,0 +1,58 @@
+body{
+  background-color: rgb(231, 231, 231)
+}
+
+img{
+  background-color: rgb(231, 231, 231);
+  border-radius: 50px;
+  margin:220px;
+  position: fixed;
+}
+
+textarea {
+ background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+ width: 100%;
+ height: 500px;
+ font: normal 14px verdana;
+ line-height: 25px;
+ border: hidden;
+ padding: 2px 25px 0 120px;
+
+ -webkit-transition: 1.5s ease;
+-moz-transition: 1.5s ease;
+-o-transition: 1.5s ease;
+-ms-transition: 1.5s ease;
+transition: 1.5s ease;
+
+}
+
+textarea:focus{
+  background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+}
+
+textarea:hover{
+  -webkit-transform: translateY(-80px);
+  -ms-transform: translateY(-80px);
+  -o-transform: translateY(-80px);
+  transform: translateY(-80px);
+}
+
+code{
+  background-color: #272822;
+  border-style: hidden;
+  font-weight: normal;
+  padding: 0.125rem 0.3125rem 0.0625rem;
+}
+
+.row {
+  height: 233px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-btn{
+  position: fixed;
+}

@@ -1,0 +1,56 @@
+<head>
+  <title>tmi</title>
+</head>
+
+<body>
+  {{> main}}
+</body>
+
+<template name="main">
+  <div class="container">
+    <div class="row">
+      <div class="small-12 columns">
+        <button class="info hvr-bounce-to-right">Too much information</button>
+        <button class="success  hvr-bounce-to-right">View Source</button>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <h1>Define this line of code?</h1>
+
+        {{#prism language="javascript" class="line-numbers" data-line="1"}}
+          {{> code}}
+        {{/prism}}
+      </div>
+      <button class="submit hvr-float-shadow" id="submit" style="float:right; z-index:1000;">Submit</button>
+
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <h2>Response:</h2>
+
+        <textarea></textarea>
+      </div>
+
+      <!-- <a href="#" class="">
+      <div class="submit-btn">
+        <button class="submit">Submit</button>
+      </div>
+      </a> -->
+    </div>
+
+
+  </div>
+
+    <!-- <img src="loosepaper.svg" width="800px"/> -->
+    <!-- <button class="btn btn-info"> Sumbit </button> -->
+</template>
+
+<template name="code">
+    {{#with lineHelper}}
+      {{content}}
+    {{/with}}
+</template>
