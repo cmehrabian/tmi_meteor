@@ -44,7 +44,7 @@ code{
   padding: 0.125rem 0.3125rem 0.0625rem;
 }
 
-.row {
+.rowHeight {
   height: 233px;
 }
 
@@ -55,4 +55,9 @@ code{
 
 .submit-btn{
   position: fixed;
+}
+
+.login {
+  margin: 20px 0px;
+  float: right;
 }

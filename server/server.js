@@ -20,7 +20,7 @@ Meteor.startup(function () {
       Linedfn.insert(lineObject);
 
     }
-  });
+});
 
   Assets.getText("main.txt", function(error, result){
     if(error){

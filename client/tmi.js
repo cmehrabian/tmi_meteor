@@ -1,3 +1,4 @@
+// Meteor.subscribe("textlines");
 
 Template.code.helpers({
   lineHelper: function(){
