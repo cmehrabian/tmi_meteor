@@ -9,6 +9,10 @@ img{
   position: fixed;
 }
 
+button{
+  margin: 0 7px 7px 0;
+}
+
 textarea {
  background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
  width: 100%;
@@ -60,4 +64,8 @@ code{
 .login {
   margin: 20px 0px;
   float: right;
+}
+
+.up-front{
+  z-index: 100000;
 }

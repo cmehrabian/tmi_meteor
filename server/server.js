@@ -7,7 +7,6 @@ Meteor.methods({
   }
 });
 
-
 Meteor.startup(function () {
   Meteor.methods({
     addLine:function(line, lineNum){
@@ -16,9 +15,16 @@ Meteor.startup(function () {
         lineNum:lineNum,
         timestamp:(new Date()).getTime()
       }
-
       Linedfn.insert(lineObject);
-
+    },
+    addComment: function(line, lineNum){
+      // var allLines = LineDfntmi.find().fetch();
+      var lineinQ = Textlines.findOne({_id: lineNum});
+      lineinQ  = lineinQ.content + " //" + line;
+      Textlines.update({_id:lineinQ._id}, {$set:{
+        content: lineinQ
+      }});
+      //add comment to end of line
     }
 });
 
@@ -28,8 +34,9 @@ Meteor.startup(function () {
     }
     if(result){
       lines = result.split( '\n' );
-      for(i=0; i < lines.length; i++){
+      for(i=1; i < lines.length; i++){
         Textlines.update({_id:i}, {"content": lines[i], "file":"exerciseList.js"}, {upsert : true});
+        LineDfntmi.update({_id:i}, {"content": lines[i], "file":"exerciseList.js"}, {upsert : true});
       }
     }
   });

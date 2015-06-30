@@ -2,26 +2,36 @@
   <div class="container">
     <div class="row">
       <div class="small-12 columns">
-        <button class="info hvr-bounce-to-right">Too much information</button>
-        <a href="/main.txt"><button class="success  hvr-bounce-to-right">View Source</button></a>
-      </div>
+        <button class="info hvr-grow">Too much information</button>
+        <a href="/main.txt"><button class="success  hvr-grow">View Source(txt)</button></a>
+        <button class="success hvr-grow" id="show-tmi">TMI Source</button>
+        <button class="alert hvr-shrink" id="close-tmi">X</button>
+
+    </div>
     </div>
 
     <div class="row rowHeight">
       <div class="small-12 columns">
-        <h1>Define this line of code?</h1>
+          {{#if tmiCode}}
+          <h1>Tmi Transcription</h1>
+              {{#prism language="javascript" class="line-numbers up-front" data-line="1-30"}}
+                {{> mainfile}}
+              {{/prism}}
+          {{else}}
+            <h1>What does this line mean to you?</h1>
+          {{/if}}
 
-        {{#prism language="javascript" class="line-numbers" data-line="1"}}
-          {{> code}}
-        {{/prism}}
+          {{#prism language="javascript" class="line-numbers" data-line="1"}}
+            {{> code}}
+          {{/prism}}
       </div>
         <button class="submit hvr-float-shadow" id="submit" style="float:right; z-index:1000;">Submit</button>
     </div>
 
-    <div class="row rowHeight">
+    <div class="row">
       <div class="small-12 columns">
         <h2>Response:</h2>
-        <textarea></textarea>
+        <textarea autofocus></textarea>
       </div>
     </div>
 
